@@ -59,14 +59,15 @@
 
 ## shipping_addresses テーブル
 
-| Column           | Type    | Options     |
-| ---------------- | ------- | ----------- |
-| post_code        | string  | null: false |
-| shipping_area_id | integer | null: false |
-| city             | string  | null: false |
-| address          | string  | null: false |
-| building_name    | string  |             |
-| tel_number       | string  | null: false |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| post_code        | string     | null: false                    |
+| shipping_area_id | integer    | null: false                    |
+| city             | string     | null: false                    |
+| address          | string     | null: false                    |
+| building_name    | string     |                                |
+| tel_number       | string     | null: false                    |
+| order            | references | null: false, foreign_key: true |
 
 ### Association
 
