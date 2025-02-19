@@ -72,5 +72,4 @@
 ### Association
 
 - belongs_to :order
-- belongs_to :item_name
 - belongs_to :shipping_area
