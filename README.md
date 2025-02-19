@@ -61,7 +61,6 @@
 
 | Column          | Type    | Options     |
 | --------------- | ------- | ----------- |
-| item_name_id    | string  | null: false |
 | price           | string  | null: false |
 | post_code       | integer | null: false |
 | prefecture_id   | string  | null: false |
