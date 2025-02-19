@@ -24,7 +24,6 @@
 
 | Column            | Type    | Options     |
 | ----------------- | ------- | ----------- |
-| image             | string  | null: false |
 | item_name         | string  | null: false |
 | item_category_id  | integer | null: false |
 | item_condition_id | integer | null: false |
@@ -61,7 +60,6 @@
 
 | Column          | Type    | Options     |
 | --------------- | ------- | ----------- |
-| image           | string  | null: false |
 | item_name_id    | string  | null: false |
 | price           | string  | null: false |
 | post_code       | integer | null: false |
