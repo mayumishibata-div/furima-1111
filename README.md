@@ -37,11 +37,11 @@
 
 - belongs_to :user
 - has_one :order
-- belongs_to :item_category_id
-- belongs_to :item_condition_id
-- belongs_to :shipping_cost_id
-- belongs_to :shipping_area_id 
-- belongs_to :delivery_time_id
+- belongs_to :item_category
+- belongs_to :item_condition
+- belongs_to :shipping_cost
+- belongs_to :shipping_area
+- belongs_to :delivery_time
 
 
 ## orders テーブル
