@@ -66,7 +66,7 @@
 | city             | string  | null: false |
 | address          | string  | null: false |
 | building_name    | string  |             |
-| tel_number       | integer | null: false |
+| tel_number       | string  | null: false |
 
 ### Association
 
