@@ -59,17 +59,17 @@
 
 ## shipping_addresses テーブル
 
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| post_code       | string  | null: false |
-| prefecture_id   | string  | null: false |
-| city            | string  | null: false |
-| address         | string  | null: false |
-| building_name   | string  |             |
-| tel_number      | integer | null: false |
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| post_code        | string  | null: false |
+| shipping_area_id | integer | null: false |
+| city             | string  | null: false |
+| address          | string  | null: false |
+| building_name    | string  |             |
+| tel_number       | integer | null: false |
 
 ### Association
 
 - belongs_to :order
 - belongs_to :item_name
-- belongs_to :prefecture
+- belongs_to :shipping_area
