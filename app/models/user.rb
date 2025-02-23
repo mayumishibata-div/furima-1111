@@ -15,7 +15,7 @@ class User < ApplicationRecord
     validates :last_name
   end  
 
-  with_options presence: true, format: { with: /\A[ァ-ヶー]+\z/, message: '全角カタカナを使用してください' } do
+  with_options presence: true, format: { with: /\A[ァ-ヶー]+\z/, message: '半角カタカナを使用してください' } do
     validates :last_name_kana
     validates :first_name_kana
   end
