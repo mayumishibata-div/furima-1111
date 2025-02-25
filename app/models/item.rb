@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   belongs_to :item_condition
   belongs_to :shipping_cost
   belongs_to :shipping_area
+  belongs_to :delivery_time
 
 
   #ジャンルの選択が「---」の時は保存できないようにする
@@ -11,4 +12,5 @@ class Item < ApplicationRecord
   validates :item_condition_id, numericality: { other_than: 1 , message: "can't be blank"}
   validates :shipping_cost_id, numericality: { other_than: 1 , message: "can't be blank"}
   validates :shipping_area_id, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :delivery_time_id, numericality: { other_than: 1 , message: "can't be blank"}
 end
