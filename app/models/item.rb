@@ -5,6 +5,8 @@ class Item < ApplicationRecord
   belongs_to :shipping_cost
   belongs_to :shipping_area
   belongs_to :delivery_time
+  belongs_to :user
+  
 
 
   #ジャンルの選択が「---」の時は保存できないようにする
