@@ -1,4 +1,4 @@
-window.addEventListener('turbo:load', () => {
+const price = () => {
 
   // 金額を入力する場所のidセレクタ
   const priceInput = document.getElementById("item-price");
@@ -21,4 +21,7 @@ window.addEventListener('turbo:load', () => {
         profitDom.innerHTML = ""; // 入力が無効な場合は空にする
     };
   });
-});
+};
+
+window.addEventListener("turbo:load", price);
+window.addEventListener("turbo:render", price);
