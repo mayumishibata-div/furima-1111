@@ -10,6 +10,6 @@ FactoryBot.define do
     shipping_cost_id { 2 }   # 有効な送料IDとする
     shipping_area_id { 2 }   # 有効な配送料地域IDとする
     delivery_time_id { 2 }    # 有効な配送時間IDとする
-    price { 500 }
+    price { Faker::Number.between(from: 300, to: 9999999).to_s } 
   end
 end
