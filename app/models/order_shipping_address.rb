@@ -1,0 +1,2 @@
+class OrderShippingAddress
+end
