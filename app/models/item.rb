@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_area
   belongs_to :delivery_time
   belongs_to :user
+  has_one :order
   has_one_attached :image
 
   validates :image, presence: true
