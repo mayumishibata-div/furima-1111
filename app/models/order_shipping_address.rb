@@ -16,4 +16,12 @@ class OrderShippingAddress
     validates :user_id
   end
   
+
+  def save
+    # 寄付情報を保存し、変数donationに代入する
+    order = Order.create(item_id: item_id, user_id: user_id)
+    # 住所を保存する
+    # donation_idには、変数donationのidと指定する
+    ShippingAddress.create(post_code: post_code, shipping_area_id: shipping_area_id, city: city, address: address, building_name: building_name, phone_number: phone_number, order_id: order.id)
+  end
 end
