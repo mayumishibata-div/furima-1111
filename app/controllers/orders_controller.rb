@@ -17,16 +17,12 @@ class OrdersController < ApplicationController
       @order_shipping_address.save
       redirect_to root_path
     else
-      render :new, status: :unprocessable_entity
+      render :index, status: :unprocessable_entity
     end
   end
 
   private
   def order_shipping_address_params
-    params.require(:order_shipping_address).permit(:post_code, :shipping_area_id, :city, :address, :building_name, :phone_number).merge(item_id: params[:item_id]) 
-  end
-
-  def shipping_address_params
-    params.permit(:postal_code, :prefecture, :city, :house_number, :building_name).merge(donation_id: @donation.id)
+    params.require(:order_shipping_address).permit(:post_code, :shipping_area_id, :city, :address, :building_name, :tel_number).merge(item_id: params[:item_id],user_id: current_user.id) 
   end
 end
