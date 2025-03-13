@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
+  before_action :set_item, only: [:index, :create ]
 
   def index
-    @item = Item.find(params[:item_id])
     @order = Order.new
     @order_shipping_address = OrderShippingAddress.new
   end
@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order_shipping_address = OrderShippingAddress.new(order_shipping_address_params)
     if @order_shipping_address.valid?
       @order_shipping_address.save
@@ -24,5 +23,9 @@ class OrdersController < ApplicationController
   private
   def order_shipping_address_params
     params.require(:order_shipping_address).permit(:post_code, :shipping_area_id, :city, :address, :building_name, :tel_number).merge(item_id: params[:item_id],user_id: current_user.id) 
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 end
