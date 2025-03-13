@@ -1,6 +1,6 @@
 class OrderShippingAddress
   include ActiveModel::Model
-  attr_accessor :post_code, :shipping_area_id, :city, :address, :building_name, :tel_number, :order, :user_id, :item_id
+  attr_accessor :post_code, :shipping_area_id, :city, :address, :building_name, :tel_number, :order, :user_id, :item_id, :token
 
   with_options presence: true do
     # 郵便番号は、「3桁ハイフン4桁」の半角文字列のみ保存可能
