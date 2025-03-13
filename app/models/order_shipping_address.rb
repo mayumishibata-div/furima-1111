@@ -14,6 +14,7 @@ class OrderShippingAddress
     # 電話番号は、10桁以上11桁以内の半角数値のみ保存可能なこと（良い例：09012345678　良くない例：090-1234-5678）。
     validates :tel_number, format: { with: /\A\d{10,11}\z/, message: "は10桁以上11桁以内の半角数値で入力してください" }  # 電話番号のバリデーションを追加
     validates :user_id
+    validates :token, presence: true
   end
   
 
