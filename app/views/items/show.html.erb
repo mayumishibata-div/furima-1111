@@ -15,33 +15,25 @@
         </div>
       <% end %>
     </div>
-    
+
     <div class="item-price-box">
       <span class="item-price">
         <%# <%= "#{@item.price}円" %> 
         <%= number_to_currency(@item.price, unit: "¥", format: "%u%n", precision: 0) %>
         <%# 数字を通貨形式で表示するための便利なヘルパーメソッド number_to_currencyを使った実装  %>
-
       </span>
       <span class="item-postage">
         <%= @item.shipping_cost.name %>
       </span>
     </div>
-
-    <% if user_signed_in? %>
-      <%# 自身が出品している商品の場合 %>
+      <%# 現在のユーザーがログインしているかどうか。かつ（@item）がすでに購入されているかどうかを確認 %>
+    <% if user_signed_in? && !Order.exists?(item_id: @item.id) %>
       <% if current_user.id == @item.user_id %>
-        <% if !Order.exists?(item_id: @item.id) %>
-          <%= link_to "商品の編集", edit_item_path(@item), method: :get, class: "item-red-btn" %>
-            <p class=“or-text”>or</p>
-          <%= link_to "削除", item_path(@item), data: {turbo_method: :delete}, class: "item-destroy" %>
-        <% end %>
+        <%= link_to "商品の編集", edit_item_path(@item), method: :get, class: "item-red-btn" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除", item_path(@item), data: { turbo_method: :delete }, class: "item-destroy" %>
       <% else %>
-      <%# 自身が出品していない販売中の商品かつ売却済みでない場合 %>
-        <%# 売却済みでない場合のみ「購入画面に進む」ボタンを表示 %>
-        <% if !Order.exists?(item_id: @item.id) %>
-          <%= link_to "購入画面に進む", item_orders_path(@item), data: { turbo: false }, class: "item-red-btn" %>
-        <% end %>
+        <%= link_to "購入画面に進む", item_orders_path(@item), data: { turbo: false }, class: "item-red-btn" %>
       <% end %>
     <% end %>
 
