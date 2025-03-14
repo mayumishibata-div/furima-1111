@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe OrderShippingAddress, type: :model do
   before do
     user = FactoryBot.create(:user)
-    @order_shipping_address = FactoryBot.build(:order_shipping_address, user_id: user.id)
+    item = FactoryBot.create(:item)
+    @order_shipping_address = FactoryBot.build(:order_shipping_address, user_id: user.id, item_id: item.id)
   end
   describe '購入情報の保存' do
 
@@ -82,6 +83,12 @@ RSpec.describe OrderShippingAddress, type: :model do
         @order_shipping_address.user_id = nil
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include("User can't be blank")
+      end
+
+      it 'itemが紐づいていないと保存できないこと' do
+        @order_shipping_address.item_id = nil
+        @order_shipping_address.valid?
+        expect(@order_shipping_address.errors.full_messages).to include("Item can't be blank")
       end
 
       it "tokenが空では登録できないこと" do
