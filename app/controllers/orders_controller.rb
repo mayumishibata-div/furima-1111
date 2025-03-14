@@ -17,9 +17,6 @@ class OrdersController < ApplicationController
     @order_shipping_address = OrderShippingAddress.new
   end
 
-  def new
-    @order = Order.new
-  end
 
   def create
     @order_shipping_address = OrderShippingAddress.new(order_shipping_address_params)
