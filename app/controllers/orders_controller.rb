@@ -2,6 +2,11 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create ]
 
   def index
+    if Order.exists?(item_id: @item.id)
+      redirect_to root_path
+      return
+    end
+
     if current_user.id == @item.user_id
       redirect_to root_path
     end
