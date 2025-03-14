@@ -13,7 +13,6 @@ class OrdersController < ApplicationController
     end
 
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
-    @order = Order.new
     @order_shipping_address = OrderShippingAddress.new
   end
 
