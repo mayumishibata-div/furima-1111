@@ -16,5 +16,13 @@ document.addEventListener('turbo:load', function(){
     const file = e.target.files[0];
     const blob = window.URL.createObjectURL(file);
     console.log(blob);
+
+    // 画像を表示するためのdiv要素を生成
+    const previewWrapper = document.createElement('div');
+    previewWrapper.setAttribute('class', 'preview');
+
+    // 表示する画像を生成
+    const previewImage = document.createElement('img');
+    previewImage.setAttribute('class', 'preview-image');
   });
 });
