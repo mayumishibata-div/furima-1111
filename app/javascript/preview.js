@@ -2,6 +2,7 @@ document.addEventListener('turbo:load', function(){
   // 新規投稿・編集ページのフォームを取得
   const postForm = document.getElementById('new_post');
   const previewList = document.getElementById('previews');
+  const clickUploadDiv = document.querySelector('.click-upload');
 
   // 新規投稿・編集ページのフォームがないならここで終了。「!」は論理否定演算子。
   if (!postForm) return null;
@@ -25,5 +26,14 @@ document.addEventListener('turbo:load', function(){
     const previewImage = document.createElement('img');
     previewImage.setAttribute('class', 'preview-image');
     previewImage.setAttribute('src', blob);
+
+    // 画像のサイズを設定（幅を50%に変更）
+    previewImage.style.width = '50%';
+    previewImage.style.height = 'auto'
+    clickUploadDiv.style.textAlign = 'center';
+
+    // 生成したHTMLの要素をブラウザに表示させる
+    previewWrapper.appendChild(previewImage);
+    previewList.appendChild(previewWrapper);
   });
 });
