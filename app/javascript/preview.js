@@ -14,5 +14,7 @@ document.addEventListener('turbo:load', function(){
     console.log("input要素で値の変化が起きました");
     console.log(e.target.files[0]);
     const file = e.target.files[0];
+    const blob = window.URL.createObjectURL(file);
+    console.log(blob);
   });
 });
