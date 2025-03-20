@@ -16,6 +16,10 @@ document.addEventListener('turbo:load', function(){
     console.log(e.target.files[0]);
     const file = e.target.files[0];
 
+    // data-index（何番目を操作しているか）を取得
+    const dataIndex = e.target.getAttribute('data-index');
+    console.log( dataIndex);
+
     // 古いプレビューが存在する場合は削除
     const alreadyPreview = document.querySelector('.preview');
     if (alreadyPreview) {
