@@ -75,6 +75,10 @@ document.addEventListener('turbo:load', function(){
     deletePreviewImage.remove();
     const deleteFileField = document.querySelector(`input[type="file"][data-index="${dataIndex}"]`);
     deleteFileField.remove();
+
+    // 画像の枚数が最大のときに削除ボタンを押した場合、file_fieldを1つ追加する
+  const imageCount = document.querySelectorAll(".preview").length;
+  if (imageCount == imageLimits - 1) buildNewFileField();
   };
 
   // input要素で値の変化が起きた際に呼び出される関数の中身
