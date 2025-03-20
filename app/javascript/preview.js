@@ -53,6 +53,12 @@ document.addEventListener('turbo:load', function(){
     newFileField.setAttribute('type', 'file');
     newFileField.setAttribute('name', 'item[images][]');
 
+    // 最後のfile_fieldを取得
+    const lastFileField = document.querySelector('input[type="file"][name="item[images][]"]:last-child');
+    // nextDataIndex = 最後のfile_fieldのdata-index + 1
+    const nextDataIndex = Number(lastFileField.getAttribute('data-index')) +1;
+    newFileField.setAttribute('data-index', nextDataIndex);
+
     // 生成したfile_fieldを表示
     const fileFieldsArea = document.querySelector('.click-upload');
     fileFieldsArea.appendChild(newFileField);
