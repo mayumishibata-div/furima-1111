@@ -10,6 +10,10 @@ document.addEventListener('turbo:load', function(){
   if (!postForm) return null;
   console.log("preview.jsが読み込まれました");
 
+   // 投稿できる枚数の制限を定義
+  const imageLimits = 5;
+
+
 // プレビュー画像を生成・表示する関数
   const buildPreviewImage = (dataIndex, blob) =>{
     
@@ -105,7 +109,10 @@ document.addEventListener('turbo:load', function(){
     };
 
     buildPreviewImage(dataIndex, blob);
-    buildNewFileField();
+    // buildNewFileField();
+    // 画像の枚数制限に引っかからなければ、新しいfile_fieldを追加する
+    const imageCount = document.querySelectorAll(".preview").length;
+    if (imageCount < imageLimits) buildNewFileField();
   };
     // input要素を取得
   const fileField = document.querySelector('input[type="file"][name="item[images][]"]');
