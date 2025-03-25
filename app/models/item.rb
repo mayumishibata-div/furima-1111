@@ -7,9 +7,12 @@ class Item < ApplicationRecord
   belongs_to :delivery_time
   belongs_to :user
   has_one :order
-  has_one_attached :image
+  # has_one_attached :image
+  has_many_attached :images
 
-  validates :image, presence: true
+  # validates :image, presence: true
+  validates :images, presence: true
+  validates :images, length: { minimum: 1, maximum: 5, message: "は1枚以上5枚以下にしてください" }
   validates :item_name, presence: true, length: { maximum: 40 }
   validates :item_description, presence: true,length: { maximum: 1000 }
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
