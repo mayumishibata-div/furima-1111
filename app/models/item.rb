@@ -18,9 +18,9 @@ class Item < ApplicationRecord
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
 
   #ジャンルの選択が「---」の時は保存できないようにする
-  validates :item_category_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :item_condition_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :shipping_cost_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :shipping_area_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :delivery_time_id, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :item_category_id, numericality: { other_than: 1 , message: "の選択を空白にすることはできません"}
+  validates :item_condition_id, numericality: { other_than: 1 , message: "の選択を空白にすることはできません"}
+  validates :shipping_cost_id, numericality: { other_than: 1 , message: "の選択を空白にすることはできません"}
+  validates :shipping_area_id, numericality: { other_than: 1 , message: "の選択を空白にすることはできません"}
+  validates :delivery_time_id, numericality: { other_than: 1 , message: "の選択を空白にすることはできません"}
 end
