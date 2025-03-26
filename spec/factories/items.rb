@@ -2,7 +2,13 @@ FactoryBot.define do
 
   factory :item do
     association :user
-    image { Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test_image.png'), 'image/png') }
+    # images { Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test_image.png'), 'image/png') }
+    images {
+      [
+        Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test_image.png'), 'image/png'),
+        Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test_image_2.png'), 'image/png')
+      ]
+    }
     item_name { "Sample Item" }
     item_description { "This is a sample item description." }
     item_category_id { 2 }  # 有効なカテゴリIDとする
