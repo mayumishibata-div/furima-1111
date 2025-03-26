@@ -1,3 +1,17 @@
+◉テストコード実行結果
+
+　■ユーザー管理機能
+ 
+ <img width="652" alt="スクリーンショット 2025-03-26 16 38 16" src="https://github.com/user-attachments/assets/9688bc89-0455-4991-9ad5-cb4bd3f6ec69" />
+
+ ■商品出品機能
+
+<img width="559" alt="スクリーンショット 2025-03-26 16 41 45" src="https://github.com/user-attachments/assets/efd6c24f-e66e-49a7-8229-8a4960a9910b" />
+
+ ■購入機能の実装
+
+<img width="546" alt="スクリーンショット 2025-03-26 16 43 00" src="https://github.com/user-attachments/assets/ac413d56-e31a-473f-b2b1-29e06672291e" />
+
 # README
 
 # テーブル設計
