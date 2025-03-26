@@ -6,7 +6,7 @@ class OrderShippingAddress
     # 郵便番号は、「3桁ハイフン4桁」の半角文字列のみ保存可能
     validates :post_code, format: { with: /\A\d{3}-\d{4}\z/, message: "は「XXX-XXXX」の形式で入力してください" }
     # 都道府県id: 1, name: '---' }は登録できない
-    validates :shipping_area_id, numericality: {other_than: 1, message: "can't be blank"}
+    validates :shipping_area_id, numericality: {other_than: 1, message: "の選択を空白にすることはできません"}
     # 市区町村が必須であること。
     validates :city
     # 番地が必須であること。

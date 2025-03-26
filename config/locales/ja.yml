@@ -20,3 +20,14 @@ ja:
         shipping_area_id: 発送元の地域
         delivery_time_id: 発送までの日数
 
+  activemodel:
+    attributes:
+      order_shipping_address:
+        post_code: 郵便番号
+        shipping_area_id: 都道府県
+        city: 市区町村
+        address: 番地
+        tel_number: 電話番号
+        token: クレジットカード情報
+      
+
