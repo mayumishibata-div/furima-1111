@@ -50,6 +50,16 @@ window.addEventListener('turbo:load', function () {
     selectWrap.appendChild(childWrap)
   }
 
+  const getGrandchildCategoryData = (grandchildCategory) => {
+    const grandchildValue = grandchildCategory.value
+    categoryXHR(grandchildValue)
+
+    XHR.onload = () => {
+      const GrandChildItems = XHR.response.item;
+      appendGrandChildSelect(GrandChildItems)
+    }
+  }
+  
   parentCategory.addEventListener('change', function () {
     selectChildElement('child-select-wrap')
     getChildCategoryData()
