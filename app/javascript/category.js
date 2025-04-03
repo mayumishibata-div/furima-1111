@@ -30,6 +30,7 @@ window.addEventListener('turbo:load', function () {
 
     childWrap.setAttribute('id', 'child-select-wrap')
     childSelect.setAttribute('id', 'child-select')
+    childSelect.setAttribute('class', 'select-box')
 
     items.forEach(item => {
       const childOption = document.createElement('option')
