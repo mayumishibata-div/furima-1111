@@ -4,7 +4,9 @@ window.addEventListener('turbo:load', function () {
   const selectWrap = document.getElementById('select-wrap')
 
   const selectChildElement = (selectForm) => {
-
+    if (document.getElementById(selectForm) !== null) {
+      document.getElementById(selectForm).remove()
+    }
   }
 
   const XHR = new XMLHttpRequest();
