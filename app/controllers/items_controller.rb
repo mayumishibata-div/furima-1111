@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
 
   def new 
     @item = Item.new
+    @maincategories = Category.all.order("id ASC").limit(13)
   end
 
   def create
