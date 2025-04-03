@@ -8,4 +8,7 @@ resources :items do
   resources :orders, only: [:index, :create]
 end
 
+resources :categories, only:[:new]
+get '/category/:id', to: 'categories#search'
+
 end
