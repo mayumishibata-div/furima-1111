@@ -20,6 +20,8 @@ window.addEventListener('turbo:load', function () {
 
     XHR.onload = () => {
       const items = XHR.response.item;
+      appendChildSelect(items)
+      const childCategory = document.getElementById('child-select')
     }
   }
 
