@@ -59,7 +59,29 @@ window.addEventListener('turbo:load', function () {
       appendGrandChildSelect(GrandChildItems)
     }
   }
-  
+
+  const appendGrandChildSelect = (items) => {
+    const childWrap = document.getElementById('child-select-wrap')
+    const grandchildWrap = document.createElement('div')
+    const grandchildSelect = document.createElement('select')
+
+    grandchildWrap.setAttribute('id', 'grand-child-select-wrap')
+    grandchildSelect.setAttribute('id', 'grand-child-select')
+    grandchildSelect.setAttribute('class', 'select-box')
+
+
+    items.forEach(item => {
+      const grandchildOption = document.createElement('option')
+      grandchildOption.innerHTML = item.name
+      grandchildOption.setAttribute('value', item.id)
+
+      grandchildSelect.appendChild(grandchildOption)
+    });
+
+    grandchildWrap.appendChild(grandchildSelect)
+    childWrap.appendChild(grandchildWrap)
+  }
+
   parentCategory.addEventListener('change', function () {
     selectChildElement('child-select-wrap')
     getChildCategoryData()
