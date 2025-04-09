@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @maincategories = Category.all.order("id ASC").limit(13)
     if @item.save
       redirect_to root_path
     else
