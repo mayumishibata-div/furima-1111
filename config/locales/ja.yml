@@ -22,7 +22,7 @@ ja:
     errors:
       messages:
         invalid: の入力が正しくありません。
-        blank: を選択してください
+        blank: を入力してください
 
   activemodel:
     attributes:

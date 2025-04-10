@@ -49,7 +49,7 @@ RSpec.describe Item, type: :model do
         @item.ancestry = nil
         # item = FactoryBot.build(:item, item_category_id: 1)
         @item.valid?
-        expect(@item.errors.full_messages).to include("Ancestryを入力してください")
+        expect(@item.errors.full_messages).to include("カテゴリーを入力してください")
       end
 
       it '商品の状態が未選択(---)の場合は出品できないこと' do
