@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def edit 
+    @maincategories = Category.all.order("id ASC").limit(13)
     if Order.exists?(item_id: @item.id)
       redirect_to root_path
       return
@@ -32,6 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @maincategories = Category.all.order("id ASC").limit(13)
     if @item.update(item_params)
       redirect_to item_path
     else
