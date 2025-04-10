@@ -46,10 +46,10 @@ RSpec.describe Item, type: :model do
       end
       
       it 'カテゴリが未選択(---)の場合は出品できないこと' do
-        @item.item_category_id = 1
+        @item.ancestry = nil
         # item = FactoryBot.build(:item, item_category_id: 1)
         @item.valid?
-        expect(@item.errors.full_messages).to include("カテゴリーの選択を空白にすることはできません")
+        expect(@item.errors.full_messages).to include("カテゴリーを入力してください")
       end
 
       it '商品の状態が未選択(---)の場合は出品できないこと' do

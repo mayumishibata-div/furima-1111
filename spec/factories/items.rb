@@ -11,7 +11,8 @@ FactoryBot.define do
     }
     item_name { "Sample Item" }
     item_description { "This is a sample item description." }
-    item_category_id { 2 }  # 有効なカテゴリIDとする
+    # item_category_id { 2 }  # 有効なカテゴリIDとする
+    ancestry { 2 }
     item_condition_id { 2 }  # 有効な状態IDとする
     shipping_cost_id { 2 }   # 有効な送料IDとする
     shipping_area_id { 2 }   # 有効な配送料地域IDとする

@@ -51,8 +51,8 @@
           <span class="indispensable">必須</span>
         </div>
         <div id="select-wrap">
-      <%= f.collection_select :ancestry, @maincategories, :id, :name, {include_blank: "---"}, {class:"select-box", id: "parent-category" } %>
-    </div>
+          <%= f.collection_select :ancestry, @maincategories, :id, :name, {include_blank: "---"}, {class:"select-box", id: "parent-category" } %>
+        </div>
         <%# <%= f.collection_select(:item_category_id, ItemCategory.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %> 
         <div class="weight-bold-text">
           商品の状態
